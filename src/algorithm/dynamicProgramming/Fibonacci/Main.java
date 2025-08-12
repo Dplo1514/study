@@ -1,6 +1,5 @@
 package algorithm.dynamicProgramming.Fibonacci;
 
-import org.apache.commons.lang3.time.StopWatch;
 
 public class Main {
     /*
@@ -10,13 +9,11 @@ public class Main {
         FibonacciRecursive : Top Down 방식의 Dynamic Programming을 적용
     */
     public static void main(String[] args) {
-        StopWatch stopWatch = new StopWatch();
 
 //        Fibonacci fibonacci = new FibonacciNaive();
         Fibonacci fibonacci = new FibonacciRecursiveTopDown();
 //        Fibonacci fibonacci = new FibonacciBottomUp();
 
-        stopWatch.start();
         // Naive    : 45 / 3488 ms   시/공간 O(2^n)
         // TopDown  : 45 / 13   ms   [ 100000 : StackOverflowError ] -> 시간 복잡도 O(n)                                   / 공간복잡도가 점점 증가하는 방식 O(n) -> O(n^2) -> O(2^n)
         // BottomUp : 45 / 15   ms   [ 100000 : 19 ms ]              -> 시간복잡도가 점점 증가하는 방식 O(n) -> O(n^2) -> O(2^n) / 공간 복잡도 O(n) , O(1)
@@ -24,9 +21,6 @@ public class Main {
 
         int fibonacciTest = fibonacci.fibonacci(10000);
         System.out.println("fibonacciTest = " + fibonacciTest);
-        stopWatch.stop();
-        System.out.println("수행시간: " + stopWatch.getTime() + " ms");
-
         equalsTest();
     }
 

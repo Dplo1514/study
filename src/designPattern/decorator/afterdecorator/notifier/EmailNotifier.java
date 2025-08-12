@@ -1,6 +1,7 @@
 package designPattern.decorator.afterdecorator.notifier;
 
-import com.designPattern.Decorator.afterdecorator.interfaces.Notifier;
+
+import designPattern.decorator.afterdecorator.interfaces.Notifier;
 
 public class EmailNotifier implements Notifier {
 

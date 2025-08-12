@@ -1,16 +1,17 @@
 package designPattern.decorator.afterdecorator;
 
-import com.designPattern.Decorator.afterdecorator.notifier.BasicNotifier;
-import com.designPattern.Decorator.afterdecorator.notifier.EmailNotifier;
-import com.designPattern.Decorator.afterdecorator.interfaces.Notifier;
-import com.designPattern.Decorator.afterdecorator.notifier.SmsNotifier;
+
+import designPattern.decorator.afterdecorator.interfaces.Notifier;
+import designPattern.decorator.afterdecorator.notifier.BasicNotifier;
+import designPattern.decorator.afterdecorator.notifier.EmailNotifier;
+import designPattern.decorator.afterdecorator.notifier.SmsNotifier;
 
 public class Main {
 
     public static void main(String[] args) {
         /*
          * 기본 알림 전송 시나리오
-             * 1. 기본 알림을 전송한다.
+         * 1. 기본 알림을 전송한다.
          */
         Notifier basicNotifier = new BasicNotifier();
         basicNotifier.send();
@@ -18,8 +19,8 @@ public class Main {
 
         /*
          * Email 알림 전송 시나리오
-             * 1. 기본 알림을 전송한다.
-             * 2. 이메일 알림을 전송한다.
+         * 1. 기본 알림을 전송한다.
+         * 2. 이메일 알림을 전송한다.
          */
         Notifier emailNotifier = new EmailNotifier(new BasicNotifier());
         emailNotifier.send();
@@ -27,9 +28,9 @@ public class Main {
 
         /*
          * Sms 알림 전송 시나리오
-             * 1. 기본 알림을 전송한다.
-             * 2. 이메일 알림을 전송한다.
-             * 3. Sms 알림을 전송한다.
+         * 1. 기본 알림을 전송한다.
+         * 2. 이메일 알림을 전송한다.
+         * 3. Sms 알림을 전송한다.
          */
         Notifier smsNotifier = new SmsNotifier(new EmailNotifier(new BasicNotifier()));
         smsNotifier.send();
