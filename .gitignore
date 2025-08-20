@@ -3,6 +3,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea
+src/coding_test/javaAlgorithmLecture/a_doc
 
 ### Eclipse ###
 .apt_generated
